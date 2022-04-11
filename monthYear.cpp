@@ -14,6 +14,7 @@ int main() {
   int month;
   int year;
   int numberOfDays;
+  
 
   // ask the user for the month
   std::cout << "Enter a month: ";
@@ -22,9 +23,26 @@ int main() {
   // ask the user for a year
   std::cout << "Enter a year: ";
   std::cin >> year;
+  
+ 
+  if (year > 1) {
+    if (month > 12 || month < 1) {
+      std::cout << "Please enter a number that represents a month";
+      std::cout << "" << std::endl;
+    }
+    // } else {
+    //   std::cout << "Invalid";
+    //   std::cout << "" << std::endl;
+    // }
+  } else {
+    std::cout << "Please enter a positive number";
+    // std::cout << "Invalid.";
+    std::cout <<"" << std::endl;
+  }
 
-  // state the month selected as a string
+
   switch (month) {
+
     case 1 :
     std::cout << "January " << year << " has 31 days.";
     break;
@@ -83,6 +101,5 @@ int main() {
     //  handle the error case
      default :
     std::cout << "Error, " << month << " does not represent a month or year.\n";
-    std::cout << "Error, " << year << " does not represent year.\n";
   }
 }
