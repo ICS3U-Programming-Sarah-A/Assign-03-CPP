@@ -2,8 +2,9 @@
 //
 // Created by: Sarah
 // Created on: Apr 1st, 2022
-//  This program asks the user to enter a number. It then tells them
-// what month the number corresponds to.
+//  This program asks the user to enter a number. It then tells you
+// what month the number corresponds to and how many days are
+// in that month.
 
 
 #include <iostream>
@@ -12,12 +13,13 @@ int main() {
   // declare variable
   int month;
   int year;
-  
+  int numberOfDays;
+
   // ask the user for the month
   std::cout << "Enter a month: ";
   std::cin >> month;
 
-  // ask the user for a year 
+  // ask the user for a year
   std::cout << "Enter a year: ";
   std::cin >> year;
 
@@ -26,10 +28,17 @@ int main() {
     case 1 :
     std::cout << "January " << year << " has 31 days.";
     break;
-   
+
+  // check if leaper year
     case 2 :
-    std::cout << "Febuary " << year << " has 30 days.";
-    break;
+    if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
+                    numberOfDays = 29;
+                } else {
+                    numberOfDays = 28;
+                }
+                 std::cout << "Feburary " << year << " has " << numberOfDays <<
+                           " days";
+                break;
 
     case 3 :
     std::cout << "March " << year << " has 31 days.";
@@ -58,7 +67,7 @@ int main() {
     case 9 :
     std::cout << "September " << year << " has 30 days.";
     break;
-    
+
     case 10 :
     std::cout << "October " << year << " has 31 days.";
     break;
@@ -74,5 +83,6 @@ int main() {
     //  handle the error case
      default :
     std::cout << "Error, " << month << " does not represent a month or year.\n";
+    std::cout << "Error, " << year << " does not represent year.\n";
   }
 }
