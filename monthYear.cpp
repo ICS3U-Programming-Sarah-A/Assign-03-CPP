@@ -2,8 +2,8 @@
 //
 // Created by: Sarah
 // Created on: Apr 11th, 2022
-//  This program asks the user to enter a number. It then tells you
-// what month the number corresponds to and how many days are
+//  This program asks the user to enter a number for a month & year. 
+// It then tells you  what month the number corresponds to and how many days are
 // in that month.
 
 
@@ -36,6 +36,8 @@ int main() {
         std::cout << "Please enter a number that represents a month";
         std::cout << "" << std::endl;
       }
+     
+      // checks to see if user month entered corresponds to a month
       switch (month) {
       case 1 :
       std::cout << "January " << year << " has 31 days.";
